@@ -20,18 +20,18 @@ export class CreateEmployeeComponent implements OnInit {
   saveEmployee(){
     this.employeeService.createEmployee(this.employee).subscribe( data =>{
       console.log(data);
+      this.goToEmployeeList();
     },
     error => console.log(error));
   }
 
-  gotToEmployeeList(){
+  goToEmployeeList(){
     this.router.navigate(['/employees']);
   }
 
   onSubmit(){
     // console.log(this.employee);
     this.saveEmployee();
-    this.gotToEmployeeList();
   }
 
 }
